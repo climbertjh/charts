@@ -69,6 +69,7 @@ metadata:
   name: {{ include "admission-controller.webhook.fullname" . }}-tls
   labels:
     {{ include "admission-controller.webhook.labels" . | nindent 4 }}
+type: kubernetes.io/tls
 data:
   tls.crt: {{ $certList._0 }}
   tls.key: {{ $certList._1 }}
